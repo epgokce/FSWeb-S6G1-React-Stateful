@@ -45,19 +45,23 @@ ADIM 6:
 	Bu click handler 'sayici' yı sıfırlamak için 'setSayici' yi kullanacak.
 */
 
-import React from 'react'; /* ADIM 0 buraya*/
+import React, {useState} from 'react'; /* ADIM 0 buraya*/
 
 export default function Sayac() {
   /* ADIM 1 buraya*/
-	
+	const [sayici, setSayici] = useState(0);
 	
   const artirici = () => {
     /* ADIM 4 buraya */
+    const yeniDeger = sayici + 1;
+    setSayici(yeniDeger);
   };
   const azaltici = () => {
     /* ADIM 5 */
+    setSayici(sayici-1);
   };
   const reset = () => {
+    setSayici(0);
   };
 
   const stil = {
