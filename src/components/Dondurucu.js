@@ -39,9 +39,10 @@ import React, {useState} from 'react'; /* STEP 0 */
 
 export default function Dondurucu() {
 /* ADIM 1 */
-
+const [dondurucuAcik, setDondurucuAcik] = useState(true);
   const toggleDondurucu = () => {
   /* ADIM 4 */
+  setDondurucuAcik(!dondurucuAcik);
   };
 
   return (
@@ -51,7 +52,7 @@ export default function Dondurucu() {
         true && <div id='döndürücü' className='spinner'>--+--</div> /* ADIM 2 */
       }
       <button id='toggleDondurucu' onClick={toggleDondurucu}>
-         Gizle {/* STEP 3 */}
+      {dondurucuAcik ? "Gizle" : "Göster"}
       </button>
     </div>
   );
